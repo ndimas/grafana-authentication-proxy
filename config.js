@@ -51,7 +51,7 @@ module.exports =  {
      * in nginx or apache for cross origin domain sharing to work (CORS).
      * Check install documentation on github
      */
-    "graphiteUrl": "http://"+window.location.hostname+":8080",
+    "graphiteUrl": "http://localhost:3000",
     
     ////////////////////////////////////
     // Security Configurations

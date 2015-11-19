@@ -25,7 +25,10 @@
     "passport": "*",
     "passport-google-oauth": "*",
     "connect-restreamer": "*",
-    "cas": "*"
+    "cas": "*",
+	"cookie-parser":"*",
+	"express-session":"*",
+	"logger":"*"	
   },
   "devDependencies": {
   },

@@ -12,11 +12,14 @@ var express = require('express');
 var https = require('https');
 var http = require('http');
 var fs = require('fs');
+var cookieParser = require('cookie-parser');
+var logger = require('logger');
+var session = require('express-session');
 
 var config = require('./config');
 var app = express();
 
-app.use(express.logger());
+app.use(logger);
 
 console.log('Server starting...');
 
@@ -25,8 +28,8 @@ if (!config.base_path) {
 	console.log("No base_path specified in config so using /");
 }
 
-app.use(express.cookieParser());
-app.use(express.session({ secret: config.cookie_secret }));
+app.use(cookieParser);
+app.use( session({ secret: config.cookie_secret }) );
 
 // Authentication
 function readAndInitBasicAuthFile() {
